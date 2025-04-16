@@ -4,7 +4,12 @@
 @section('title', 'Home')
 
 @section('content')
-    <!-- Home Slider -->
+    <x-card>
+        <x-slot:title>card title 1</x-slot:title>
+        card content 1
+        <x-slot:footer>card footer 1</x-slot:footer>
+    </x-card>
+      <!-- Home Slider -->
     <section class="hero-slider">
         <!-- Carousel wrapper -->
         <div class="hero-slides">
