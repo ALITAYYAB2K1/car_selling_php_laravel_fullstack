@@ -1,13 +1,21 @@
-@vite(['resources/js/app.js', 'resources/css/app.css'])
-@extends('layouts.clean')
+@props(['title'=>'', 'footerLinks'=>''])
+<x-base-layout :$title>
+    <x-layouts.header/>
+    {{$slot}}
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; {{ date('Y') }} Your Cali Name. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#">Link1</a>
+        {{$footerLinks}}
+    </footer>
 
 
-@section('childContent')
-@include('layouts.partials.header')
-@yield('content')
-@include('layouts.partials.footer')
-@endsection
-
+</x-base-layout>
 
 
 
